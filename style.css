@@ -2,6 +2,7 @@
 
 body {
   font-family: "Cutive Mono", monospace;
+  background-color: #f2f2f2;
 }
 
 .disable {
@@ -49,13 +50,6 @@ a:hover {
 	margin: 0 10px;
 }
 
-.main {
-	height: 100%;
-	width: 100%;
-	background-image: url('double_lined/double_lined.png');
-	opacity: 0.5;
-}
-
 .text {
 	margin-top: 100px;
 	margin-bottom: 50px;
@@ -65,7 +59,7 @@ h2 {
 	margin-top: 10px;
 	font-size: 24px;
 	line-height: 24px;
-	background-color: #ffff80;
+	background-color: #ffffff;
 	padding: 10px;
 	display: inline-block;
 }
