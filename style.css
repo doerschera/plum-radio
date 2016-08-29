@@ -1,0 +1,50 @@
+@import 'https://fonts.googleapis.com/css?family=Bungee+Hairline|Cutive+Mono';
+
+body {
+  font-family: "Cutive Mono", monospace;
+}
+
+header {
+	background-color: #330033;
+}
+
+h1 {
+	margin-left: 20px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+  	font-family: "Bungee Hairline", "Helvetice Neue", sans-serif;
+  	color: #ffffff;
+}
+
+h2 {
+	font-size: 20px;
+	background-color: 
+}
+
+li {
+	display: inline-block;
+	list-style: none;
+}
+
+#headerLinks {
+	float: right;
+	text-align: right;
+	color: #ffffff;
+	margin-top: 25px;
+}
+
+a {
+	color: #ffffff;
+}
+
+a:hover {
+	color: #ffffff;
+}
+
+#headerLinks li {
+	color: #ffffff;
+}
+
+#headerLinks li:nth-Child(2) {
+	margin: 0 10px;
+}
