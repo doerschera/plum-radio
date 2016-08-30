@@ -83,3 +83,35 @@ h2 {
 	padding: 10px;
 	display: inline-block;
 }
+
+.form-group {
+  padding: 0;
+}
+
+#pastTab {
+  width: 100px;
+  padding: 5px;
+  background-color: #330033;
+  text-align: center;
+  position: relative;
+  left: 16.66%;
+}
+
+#pastTab a {
+  color: #ffffff;
+}
+
+.btn {
+  border-radius: 0;
+  background-color: #330033;
+  color: #ffffff;
+}
+
+.btn:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#next {
+  margin-left: 20px;
+}
