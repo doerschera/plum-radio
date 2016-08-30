@@ -2,7 +2,9 @@
 
 body {
   font-family: "Cutive Mono", monospace;
-  background-color: #f2f2f2;
+  background-color: #330033;
+  background-image: url('radio.jpg');
+  background-size: 1800px auto;
 }
 
 .disable {
@@ -52,6 +54,18 @@ a:hover {
 #headerLinks li:nth-Child(2) {
 	margin: 0 10px;
 }
+
+/*#bkgd {
+  height: 100vh;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+}*/
+
+/*.main {
+  height: 100vh;
+  background-color: rgba(51, 0, 51, .5);
+}*/
 
 .text {
 	margin-top: 100px;
