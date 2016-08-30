@@ -8,16 +8,21 @@
   </head>
   <body>
 
-    <header class="col-xs-12">
-      <h1 class="col-xs-5">Plum Radio</h1>
-      <ul class="col-xs-6" id="headerLinks">
-        <li><a href="#">gut mode</a></li>
-        <li><a href="#">zen mode</a></li>
-        <li>poets + poems</li>
-      </ul>
-    </header>
-
-    <div id="bkgd"></div>
+    <div class="row">
+      <header class="col-xs-12">
+        <h1 class="col-xs-5">Plum Radio</h1>
+        <ul class="col-xs-6" id="headerLinks">
+          <li><a href="#">gut mode</a>
+            <div class="row">
+              <div id="timer">60</div>
+            </div>
+          </li>
+          <li><a href="#">zen mode</a></li>
+          <li>poets + poems</li>
+          <li><a href="#">about</a></li>
+        </ul>
+      </header>
+    </div>
 
     <div class="main container">
       <div class="row">
@@ -28,7 +33,7 @@
       </div>
       <div class="row">
         <div class="form-group col-xs-8 col-xs-offset-2">
-          <textarea rows="15" cols="40" class="form-control" id="input"></textarea>
+          <textarea rows="15" cols="40" class="form-control" id="input"  type="text"></textarea>
         </div>
       </div>
       <div class="row disable">

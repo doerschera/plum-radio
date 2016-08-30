@@ -2,7 +2,6 @@
 
 body {
   font-family: "Cutive Mono", monospace;
-  background-color: #330033;
   background-image: url('radio.jpg');
   background-size: 1800px auto;
 }
@@ -55,20 +54,23 @@ a:hover {
 	margin: 0 10px;
 }
 
-/*#bkgd {
-  height: 100vh;
-  width: 100%;
-  z-index: -1;
-  position: absolute;
-}*/
+#headerLinks li:nth-child(4) {
+  padding-left: 7px;
+}
 
-/*.main {
-  height: 100vh;
-  background-color: rgba(51, 0, 51, .5);
-}*/
+#timer {
+  width: 72px;
+  padding: 5px;
+  color: #ffffff;
+  text-align: center;
+  background-color: #330033;
+  position: absolute;;
+  top: 30px;
+  margin-left: 13px;
+}
 
 .text {
-	margin-top: 100px;
+	margin-top: 110px;
 	margin-bottom: 50px;
 }
 
@@ -76,6 +78,7 @@ h2 {
 	margin-top: 10px;
 	font-size: 24px;
 	line-height: 24px;
+  color: #330033;
 	background-color: #ffffff;
 	padding: 10px;
 	display: inline-block;
