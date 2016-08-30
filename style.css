@@ -10,15 +10,19 @@ body {
 }
 
 header {
-	background-image: url('purplestatic.jpg');
+	/*background-image: url('purplestatic.jpg');*/
+  border-top: solid 2px #003300;
+  border-bottom: solid 2px #003300;
+  background-color: #ffffff;
 }
 
 h1 {
 	margin-left: 20px;
 	margin-top: 10px;
 	margin-bottom: 5px;
-  	font-family: "Bungee Hairline", "Helvetice Neue", sans-serif;
-  	color: #ffffff;
+  font-family: "Bungee Hairline", "Helvetice Neue", sans-serif;
+  color: #330033;
+  font-weight: bold;
 }
 
 li {
@@ -29,20 +33,19 @@ li {
 #headerLinks {
 	float: right;
 	text-align: right;
-	color: #ffffff;
 	margin-top: 25px;
 }
 
 #headerLinks li {
-	color: #ffffff;
+	color: #330033;
 }
 
 a {
-	color: #ffffff;
+	color: #330033;
 }
 
 a:hover {
-	color: #ffffff;
+	color: #330033;
 }
 
 
