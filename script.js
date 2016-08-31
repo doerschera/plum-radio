@@ -111,4 +111,10 @@ $document.ready(function(){
     }
   }
 
+  function pastLines() {
+    $('#pastTab, .form-group').addClass('disable');
+    $('#inputTab, #pastLines').removeClass('disable');
+
+  }
+
 })
