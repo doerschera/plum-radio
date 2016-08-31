@@ -37,7 +37,19 @@ $document.ready(function(){
   var usedPoems = [];
 
   // Buttons
+  $('#gutModeStart').click(function() {
+    gutMode();
+    start();
+  })
 
+  $('#zenModeStart').click(function() {
+    start();
+  })
+
+  function start() {
+    $('.start').addClass('disable');
+    $('.main').removeClass('disable');
+  }
 
   function getPoem() {
     if(usedPoems.length === poems.length) {
