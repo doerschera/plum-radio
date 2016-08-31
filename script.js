@@ -46,6 +46,12 @@ $document.ready(function(){
     start();
   })
 
+  $('#zenMode').click(function() {
+    zenMode();
+  })
+
+
+
   function start() {
     $('.start').addClass('disable');
     $('.main').removeClass('disable');
@@ -87,6 +93,12 @@ $document.ready(function(){
     $('#timer').removeClass('disable');
     $('.buttons').addClass('disable');
     timer();
+  }
+
+  function zenMode() {
+    timedMode = false;
+    $('#timer').addClass('disable');
+    clearInterval(timer);
   }
 
   function nextPoem() {
