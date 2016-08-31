@@ -1,11 +1,11 @@
-$document.ready(function(){
+$(document).ready(function(){
 
   var poems = [
     {
     poet: "Michael Robins",
     poem: "His Passion is Doves",
     book: "Ladies & Gentlemen",
-    publisher: "Saturnalia Books, 2011"
+    publisher: "Saturnalia Books, 2011",
     lines: ["Bewildered, our pigeons flew ashore long ago", "The mull the rooms of old, coastal motels"]
    },
    {
@@ -36,6 +36,7 @@ $document.ready(function(){
   var timedMode = false;
   var usedPoems = [];
   var userText;
+  var poemCount = 5;
 
   // Buttons
   $('#gutModeStart').click(function() {
@@ -45,6 +46,7 @@ $document.ready(function(){
 
   $('#zenModeStart').click(function() {
     start();
+
   })
 
   $('#zenMode').click(function() {
@@ -59,23 +61,33 @@ $document.ready(function(){
     pastLinesBack();
   })
 
+  $('#next').click(function() {
+    nextPoem();
+    addUserText();
+  })
+
 
   function start() {
     $('.start').addClass('disable');
     $('.main').removeClass('disable');
+    getPoem();
+    populateLines();
+    if(timedMode = true) {
+      $('#minutes').removeClass('disable');
+      $('#zenModeStart').addClass('disable');
+    }
   }
 
   function getPoem() {
+    console.log(poems.length);
+    var index = Math.floor(Math.random() * (poems.length));
     if(usedPoems.length === poems.length) {
       usedPoems = [];
+    } else if(usedPoems.indexOf(index) === -1) {
+      lines = poems[index].lines;
+      usedPoems.push(index);
     } else {
-      var index = Math.floor(Math.random * (poems.length))-1;
-      if(usedPoems.indexOf(index) != -1) {
-        lines = poems[index].lines;
-        usedPoems.push(index);
-      } else {
-        getPoem();
-      }
+      getPoem();
     }
   }
 
@@ -91,9 +103,9 @@ $document.ready(function(){
         nextPoem();
         clearInterval(timer);
       } else {
-        $('#timer').html(count--);
+        $('#timer').html(counter--);
       }
-    })
+    }, 1000)
   }
 
   function gutMode() {
@@ -106,16 +118,18 @@ $document.ready(function(){
   function zenMode() {
     timedMode = false;
     $('#timer').addClass('disable');
+    $('#next').removeClass('disable');
     clearInterval(timer);
   }
 
   function nextPoem() {
     $('#lines').empty();
+    $('textarea').val("");
     getPoem();
     populateLines();
     addUserText();
-    if(timedMode == true;) {
-      count = 60;
+    if(timedMode == true) {
+      counter = 60;
       timer();
     }
   }
