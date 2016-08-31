@@ -51,6 +51,10 @@ $(document).ready(function(){
     zenMode();
   })
 
+  $('#gutMode').click(function() {
+    gutMode();
+  })
+
   $('#pastTab').click(function() {
     pastLines();
   })
@@ -121,14 +125,17 @@ $(document).ready(function(){
     timedMode = true;
     $('#timer').removeClass('disable');
     $('.buttons').addClass('disable');
+    count = 60;
+    poemCount = 5;
     timer();
   }
 
   function zenMode() {
     timedMode = false;
     $('#timer').addClass('disable');
-    $('#next').removeClass('disable');
+    $('.buttons').removeClass('disable');
     clearInterval(timer);
+    count = 0;
   }
 
   function nextPoem() {
@@ -147,15 +154,13 @@ $(document).ready(function(){
     $('#pastTab, .form-group').addClass('disable');
     $('#inputTab, #pastLines').removeClass('disable');
     if(timedMode = true) {
+      console.log('here');
         clearInterval(timer);
     }
   }
   function pastLinesBack() {
     $('#pastTab, .form-group').removeClass('disable');
     $('#inputTab, #pastLines').addClass('disable');
-    if(timedMode = true) {
-      timer();
-    }
   }
 
   function addUserText() {
