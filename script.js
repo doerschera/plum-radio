@@ -31,6 +31,42 @@ $document.ready(function(){
   }
   ]
 
-  
+  var counter = 60;
+  var lines;
+
+  // Buttons
+
+
+  function getPoem() {
+    var index = Math.floor(Math.random * (poems.length))-1;
+    lines = poems[index].lines;
+  }
+
+  function populateLines() {
+    for(var i = 0; i < lines.length; i ++) {
+      $('#lines').append("<h2>"+lines[i]+"</h2>");
+    }
+  }
+
+  function timer() {
+    setInterval(function(){
+      if(counter == 0) {
+        nextPoem();
+        clearInterval(timer);
+      } else {
+        $('#timer').html(count--);
+      }
+    })
+  }
+
+  function gutMode() {
+    $('#timer').removeClass('disable');
+    $('.buttons').addClass('disable');
+    timer();
+  }
+
+  function nextPoem() {
+
+  }
 
 })
