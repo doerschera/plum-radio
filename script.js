@@ -27,7 +27,7 @@ $(document).ready(function(){
     poem: "Wake",
     book: "Subject",
     publisher: "University of California Press, 2005",
-    lines: ["wake: outside the frame beyond his 'fit'", "wake: frothed a blankness in the passage of what", "wake: we waited     (and scilence)"]
+    lines: ["wake: outside the frame beyond his 'fit'", "wake: frothed a blankness in the passage of what", "wake: we waited &nbsp&nbsp(and silence)"]
   }
   ]
 
@@ -36,17 +36,15 @@ $(document).ready(function(){
   var timedMode = false;
   var usedPoems = [];
   var userText;
-  var poemCount = 5;
+  var poemCount = 0;
 
   // Buttons
   $('#gutModeStart').click(function() {
-    gutMode();
-    start();
+    gutStart();
   })
 
   $('#zenModeStart').click(function() {
     start();
-
   })
 
   $('#zenMode').click(function() {
@@ -72,17 +70,28 @@ $(document).ready(function(){
     $('.main').removeClass('disable');
     getPoem();
     populateLines();
-    if(timedMode = true) {
-      $('#minutes').removeClass('disable');
-      $('#zenModeStart').addClass('disable');
-    }
+  }
+
+  function gutStart() {
+    $('#minutes').removeClass('disable');
+    $('#zenModeStart').addClass('disable');
+    $('#ten').click(function() {
+      poemCount = 10;
+      start();
+      gutMode();
+    })
+    $('#five').click(function() {
+      poemCount = 5;
+      start();
+      gutMode();
+    })
   }
 
   function getPoem() {
-    console.log(poems.length);
     var index = Math.floor(Math.random() * (poems.length));
     if(usedPoems.length === poems.length) {
       usedPoems = [];
+      getPoem();
     } else if(usedPoems.indexOf(index) === -1) {
       lines = poems[index].lines;
       usedPoems.push(index);
@@ -124,13 +133,13 @@ $(document).ready(function(){
 
   function nextPoem() {
     $('#lines').empty();
-    $('textarea').val("");
     getPoem();
     populateLines();
     addUserText();
     if(timedMode == true) {
       counter = 60;
-      timer();
+      poemCount --;
+      console.log(poemCount);
     }
   }
 
@@ -151,8 +160,10 @@ $(document).ready(function(){
 
   function addUserText() {
     var inputValue = $('textarea').val();
+    console.log(inputValue);
     userText = "<p>"+inputValue+"</p>"
     $('#pastLines').append(userText);
+    $('textarea').val("");
   }
 
 })
