@@ -24,7 +24,24 @@
       </header>
     </div>
 
-    <div class="main container">
+    <div class="container">
+      <div class="row">
+        <div class="text col-xs-8 col-xs-offset-2" id="intro">
+          <h2 id="title">Plum Radio</h2>
+          <h2>a tool to help writers get tuned in</h2>
+          <div id="instructions">
+            <p>random poem fragments provide a starting point for freewriting. gut mode is timed: 60 seconds to get words flowing. zen mode is untimed, take as long as you want. you can change mode any time in the top bar. click the "past lines" tab at any point to see what you've written for each fragment.</p>
+          </div>
+          <h2>To get started choose a mode:</h2> <p id="mode"><a href="#">gut mode</a>&nbsp
+            <span class="disable" id="minutes"> how long? <button class="fragmentNum inverse btn" type="button" >5</button>
+            <button class="fragmentNum inverse btn" type="button" >10</button>
+          </span><a class="" href="#" id="zenMode">zen mode</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="main disable container">
       <div class="row">
         <div class="text col-xs-8 col-xs-offset-2">
           <h2>Bewildered, our pigeons flew ashore long ago</h2>
@@ -43,7 +60,7 @@
         <div class="form-group col-xs-8 col-xs-offset-2">
           <textarea rows="15" cols="40" class="form-control" id="input"  type="text"></textarea>
         </div>
-        <div class="disable col-xs-8 col-xs-offset-2" id="pastDisplay">
+        <div class="display disable col-xs-8 col-xs-offset-2">
           <p></p>
         </div>
       </div>
@@ -55,7 +72,7 @@
       </div>
     </div>
 
-    <div class="citations disable container">
+    <div class="display disable container" id="citations">
       <div class="row col-xs-8 col-xs-offset-2">
         <ul class="poets col-xs-6">
           <li>Michael Robins</li>
@@ -156,10 +173,11 @@
       </div>
     </div>
 
-    <footer class="col-xs-12">
-      <p class="copy">&copy Aly Doerscher 2016</p>
-    </footer>
-
+    <div class="footer">
+      <footer class="col-xs-12">
+        <p class="copy">&copy Aly Doerscher 2016</p>
+      </footer>
+    </div>
 
     <script type="text/javascript" source="script.js"></script>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>

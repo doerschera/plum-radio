@@ -10,6 +10,21 @@ body {
 	display: none;
 }
 
+.buttons {
+  float: right;
+}
+
+.btn {
+  border-radius: 0;
+  background-color: #330033;
+  color: #ffffff;
+}
+
+.btn:hover {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
 header {
 	/*background-image: url('purplestatic.jpg');*/
   border-top: solid 2px #003300;
@@ -74,7 +89,11 @@ a:hover {
 	margin-bottom: 50px;
 }
 
-h2 {
+#intro {
+  margin-bottom: 30px;
+}
+
+h2, h3 {
 	margin-top: 10px;
 	font-size: 24px;
 	line-height: 24px;
@@ -82,6 +101,60 @@ h2 {
 	background-color: #ffffff;
 	padding: 10px;
 	display: inline-block;
+}
+
+h3 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+#title {
+  font-family: "Bungee Hairline", "Helvetica Neue";
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+#instructions {
+  margin-top: 20px;
+  background-color: #ffffff;
+  padding: 10px;
+}
+
+#mode {
+  background-color: #ffffff;
+  padding: 10px;
+  display: inline-block;
+  position: relative;
+  bottom: 2px;
+}
+
+.settings {
+  text-align: center;
+  background-color: #ffffff;
+  padding: 10px;
+  width: 220px;
+  margin-top: 20px;
+  margin-left: 12px;
+}
+
+.inverse {
+  background-color: #ffffff;
+  color: #330033;
+  border: solid 1px #330033;
+}
+
+.inverse:hover {
+  color: #330033;
+}
+
+.fragmentNum {
+  text-align: center;
+  border-radius: 100%;
+  font-size: 12px;
+  padding: 3px;
+  width: 23px;
+  height: 23px;
 }
 
 .form-group {
@@ -105,33 +178,18 @@ h2 {
   color: #ffffff;
 }
 
-#pastDisplay, .citations {
+.display {
   width: 66.66%;
   height: 324px;
   background-color: #ffffff;
   margin-bottom: 15px;
 }
 
-.buttons {
-  float: right;
-}
-
-.btn {
-  border-radius: 0;
-  background-color: #330033;
-  color: #ffffff;
-}
-
-.btn:hover {
-  color: #ffffff;
-  text-decoration: underline;
-}
-
 #next {
   margin-left: 20px;
 }
 
-.citations {
+#citations {
   margin-top: 110px;
   background-color: transparent;
   /*overflow: auto;*/
@@ -145,7 +203,7 @@ h2 {
   background-color: #ffffff;
 }
 
-footer {
+.footer {
   margin-top: 20px;
   width: 100%;
   position: fixed;
