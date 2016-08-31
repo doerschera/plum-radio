@@ -114,7 +114,16 @@ $document.ready(function(){
   function pastLines() {
     $('#pastTab, .form-group').addClass('disable');
     $('#inputTab, #pastLines').removeClass('disable');
-
+    if(timedMode = true) {
+        clearInterval(timer);
+    }
+  }
+  function pastLinesBack() {
+    $('#pastTab, .form-group').removeClass('disable');
+    $('#inputTab, #pastLines').addClass('disable');
+    if(timedMode = true) {
+      timer();
+    }
   }
 
 })
