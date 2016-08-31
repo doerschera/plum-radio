@@ -25,6 +25,10 @@ body {
   text-decoration: underline;
 }
 
+p {
+  margin: 0;
+}
+
 header {
 	/*background-image: url('purplestatic.jpg');*/
   border-top: solid 2px #003300;

@@ -14,7 +14,7 @@
         <ul class="col-xs-6" id="headerLinks">
           <li><a href="#">gut mode</a>
             <div class="row">
-              <div id="timer">60</div>
+              <div class="disable" id="timer">60</div>
             </div>
           </li>
           <li><a href="#">zen mode</a></li>
@@ -30,7 +30,7 @@
           <h2 id="title">Plum Radio</h2>
           <h2>a tool to help writers get tuned in</h2>
           <div id="instructions">
-            <p>random poem fragments provide a starting point for freewriting. gut mode is timed: 60 seconds to get words flowing. zen mode is untimed, take as long as you want. you can change mode any time in the top bar. click the "past lines" tab at any point to see what you've written for each fragment.</p>
+            <p>random poem fragments provide a starting point for freewriting. gut mode is timed: 60 seconds to get words flowing. zen mode is untimed, take as long as you want. you can change mode any time in the top bar. click the "past lines" tab to see what you've written for each fragment.</p>
           </div>
           <h2>To get started choose a mode:</h2> <p id="mode"><a href="#">gut mode</a>&nbsp
             <span class="disable" id="minutes"> how long? <button class="fragmentNum inverse btn" type="button" >5</button>
@@ -43,7 +43,7 @@
 
     <div class="main disable container">
       <div class="row">
-        <div class="text col-xs-8 col-xs-offset-2">
+        <div class="text col-xs-8 col-xs-offset-2" id="lines">
           <h2>Bewildered, our pigeons flew ashore long ago</h2>
           <h2>They mull the rooms of old, coastal motels</h2>
         </div>
@@ -64,8 +64,8 @@
           <p></p>
         </div>
       </div>
-      <div class="row disable col-xs-10">
-        <div class="buttons">
+      <div class="row col-xs-10">
+        <div class="buttons disable">
           <button class="btn" type="button" id="save">save</button>
           <button class="btn" type="button" id="next">next</button>
         </div>
