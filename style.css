@@ -88,7 +88,7 @@ h2 {
   padding: 0;
 }
 
-#pastTab {
+.tab {
   width: 100px;
   padding: 5px;
   background-color: #330033;
@@ -97,8 +97,23 @@ h2 {
   left: 16.66%;
 }
 
-#pastTab a {
+.tab a {
   color: #ffffff;
+}
+
+.glyphicon {
+  color: #ffffff;
+}
+
+#pastDisplay, .citations {
+  width: 66.66%;
+  height: 324px;
+  background-color: #ffffff;
+  margin-bottom: 15px;
+}
+
+.buttons {
+  float: right;
 }
 
 .btn {
@@ -114,4 +129,18 @@ h2 {
 
 #next {
   margin-left: 20px;
+}
+
+.citations {
+  margin-top: 110px;
+  background-color: transparent;
+  /*overflow: auto;*/
+}
+
+.poets {
+  margin-bottom: 30px;
+}
+
+.poets li {
+  background-color: #ffffff;
 }
