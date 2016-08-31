@@ -34,13 +34,23 @@ $document.ready(function(){
   var counter = 60;
   var lines;
   var timedMode = false;
+  var usedPoems = [];
 
   // Buttons
 
 
   function getPoem() {
-    var index = Math.floor(Math.random * (poems.length))-1;
-    lines = poems[index].lines;
+    if(usedPoems.length === poems.length) {
+      usedPoems = [];
+    } else {
+      var index = Math.floor(Math.random * (poems.length))-1;
+      if(usedPoems.indexOf(index) != -1) {
+        lines = poems[index].lines;
+        usedPoems.push(index);
+      } else {
+        getPoem();
+      }
+    }
   }
 
   function populateLines() {
@@ -68,6 +78,7 @@ $document.ready(function(){
   }
 
   function nextPoem() {
+    $('#lines').empty();
     getPoem();
     populateLines();
     if(timedMode == true;) {
