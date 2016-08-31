@@ -35,6 +35,7 @@ $document.ready(function(){
   var lines;
   var timedMode = false;
   var usedPoems = [];
+  var userText;
 
   // Buttons
   $('#gutModeStart').click(function() {
@@ -50,6 +51,13 @@ $document.ready(function(){
     zenMode();
   })
 
+  $('#pastTab').click(function() {
+    pastLines();
+  })
+
+  $('#inputTab').click(function() {
+    pastLinesBack();
+  })
 
 
   function start() {
@@ -105,6 +113,7 @@ $document.ready(function(){
     $('#lines').empty();
     getPoem();
     populateLines();
+    addUserText();
     if(timedMode == true;) {
       count = 60;
       timer();
@@ -124,6 +133,12 @@ $document.ready(function(){
     if(timedMode = true) {
       timer();
     }
+  }
+
+  function addUserText() {
+    var inputValue = $('textarea').val();
+    userText = "<p>"+inputValue+"</p>"
+    $('#pastLines').append(userText);
   }
 
 })
