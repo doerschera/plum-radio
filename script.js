@@ -33,6 +33,7 @@ $document.ready(function(){
 
   var counter = 60;
   var lines;
+  var timedMode = false;
 
   // Buttons
 
@@ -60,13 +61,19 @@ $document.ready(function(){
   }
 
   function gutMode() {
+    timedMode = true;
     $('#timer').removeClass('disable');
     $('.buttons').addClass('disable');
     timer();
   }
 
   function nextPoem() {
-
+    getPoem();
+    populateLines();
+    if(timedMode == true;) {
+      count = 60;
+      timer();
+    }
   }
 
 })
