@@ -30,6 +30,11 @@ body {
   text-decoration: underline;
 }
 
+.btn:active:focus, .btn:focus {
+  color: #ffffff;
+  outline: none;
+}
+
 p {
   margin: 0;
 }
