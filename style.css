@@ -160,6 +160,10 @@ h2 {
   padding: 0;
 }
 
+textarea {
+  overflow: auto;
+}
+
 .tab {
   width: 100px;
   padding: 5px;
@@ -186,6 +190,10 @@ h2 {
 
 #next {
   margin-left: 20px;
+}
+
+#pastLines p {
+  margin-top: 15px;
 }
 
 #citations {
