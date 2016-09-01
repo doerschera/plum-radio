@@ -96,7 +96,7 @@ $(document).ready(function(){
       gutMode();
     })
     $('#five').click(function() {
-      poemCount = 1;
+      poemCount = 5;
       start();
       gutMode();
     })
