@@ -39,7 +39,7 @@ $(document).ready(function(){
   var poemCount = 0;
   var timeCounter;
 
-  // Buttons
+  // Click events
   $('#gutModeStart').click(function() {
     gutStart();
   })
@@ -131,7 +131,7 @@ $(document).ready(function(){
     timedMode = true;
     $('#lines').empty();
     $('#timer').removeClass('disable');
-    $('.buttons, #citations').addClass('disable');
+    $('#next, #citations').addClass('disable');
     counter = 60;
     poemCount = 5;
     timer();
@@ -143,7 +143,7 @@ $(document).ready(function(){
     timedMode = false;
     $('#lines').empty();
     $('#timer, #citations').addClass('disable');
-    $('.buttons, .main').removeClass('disable');
+    $('#next, .main').removeClass('disable');
     clearInterval(timeCounter);
     counter = null;
   }
@@ -157,6 +157,7 @@ $(document).ready(function(){
       counter = 60;
       poemCount --;
       console.log(poemCount);
+      timedModeEnd();
     }
   }
 
@@ -191,6 +192,17 @@ $(document).ready(function(){
       $('.poets').children('ul').eq(i).append("<div><li>"+poems[i].publisher+"</li></div>");
     }
     $(".poets > ul").addClass('col-xs-6');
+  }
+
+  function timedModeEnd() {
+    if(poemCount === 0) {
+      clearInterval(timeCounter);
+      $('#lines').empty();
+      $('#lines').append("<h2>Here's what you've written:</h2>");
+      $('.form-group, #pastTab, #next, #timer').addClass('disable');
+      $('#pastLines, #again').removeClass('disable');
+      poemCount = 5;
+    }
   }
 
 })
