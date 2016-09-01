@@ -37,6 +37,7 @@ $(document).ready(function(){
   var usedPoems = [];
   var userText;
   var poemCount = 0;
+  var timeCounter;
 
   // Buttons
   $('#gutModeStart').click(function() {
@@ -111,7 +112,7 @@ $(document).ready(function(){
   }
 
   function timer() {
-    setInterval(function(){
+    timerCounter = setInterval(function(){
       if(counter == 0) {
         nextPoem();
         clearInterval(timer);
@@ -125,7 +126,7 @@ $(document).ready(function(){
     timedMode = true;
     $('#timer').removeClass('disable');
     $('.buttons').addClass('disable');
-    count = 60;
+    counter = 60;
     poemCount = 5;
     timer();
   }
@@ -134,8 +135,8 @@ $(document).ready(function(){
     timedMode = false;
     $('#timer').addClass('disable');
     $('.buttons').removeClass('disable');
-    clearInterval(timer);
-    count = 0;
+    clearInterval(timeCounter);
+    counter = null;
   }
 
   function nextPoem() {
