@@ -218,14 +218,15 @@ textarea {
 .footer {
   margin-top: 50px;
   width: 100%;
+  position: fixed;
   bottom: 0px;
   left: 0px;
 }
 
-footer {
+/*footer {
   position: absolute;
   bottom: 0;
-}
+}*/
 
 .copy {
   color: #ffffff;
