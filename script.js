@@ -69,6 +69,10 @@ $(document).ready(function(){
     addUserText();
   })
 
+  $('#poetsPoems').click(function() {
+    citations();
+  })
+
 
   function start() {
     $('.start').addClass('disable');
@@ -173,14 +177,16 @@ $(document).ready(function(){
   }
 
   function citations() {
+    $('.main, .start').addClass('disable');
+    $('#citations').removeClass('disable');
     for(var i = 0; i < poems.length; i++) {
-      var list = $('.poets').append("<ul></ul>");
-      $(list).addClass("col-xs-6");
-      $(list).append(poems.poet);
-      $(list).append(poems.poem);
-      $(list).append("<em>"+poems.book+"</em>");
-      $(list).append(poems.publisher);
+      $('.poets').append("<ul></ul>");
+      $('.poets').children('ul').eq(i).append("<li>"+poems[i].poet+"</li>");
+      $('.poets').children('ul').eq(i).append("<li>"+poems[i].poem+"</li>");
+      $('.poets').children('ul').eq(i).append("<li><em>"+poems[i].book+"</li></em>");
+      $('.poets').children('ul').eq(i).append("<li>"+poems[i].publisher+"</li>");
     }
+    $(".poets > ul").addClass('col-xs-6');
   }
 
 })
