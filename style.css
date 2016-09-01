@@ -6,6 +6,11 @@ body {
   background-size: 1800px auto;
 }
 
+.wrapper {
+  height: 100vh;
+  margin-bottom: 50px;
+}
+
 .disable {
 	display: none;
 }
@@ -215,18 +220,10 @@ textarea {
   background-color: #ffffff;
 }
 
-.footer {
+footer {
   margin-top: 50px;
   width: 100%;
-  position: fixed;
-  bottom: 0px;
-  left: 0px;
 }
-
-/*footer {
-  position: absolute;
-  bottom: 0;
-}*/
 
 .copy {
   color: #ffffff;
