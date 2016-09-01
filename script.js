@@ -19,14 +19,14 @@ $(document).ready(function(){
     poet: "Elizabeth Hughey",
     poem: "What Bird",
     book: "Sunday Houses The Sunday House",
-    publisher: "University of Iowa Press, 2007",
+    publisher: "U. of Iowa Press, 2007",
     lines: ["Bulbs, gravel driveway.", "I had hyacinth on my mouth."]
   },
   {
     poet: "Laura Miller",
     poem: "Wake",
     book: "Subject",
-    publisher: "University of California Press, 2005",
+    publisher: "U. of California Press, 2005",
     lines: ["wake: outside the frame beyond his 'fit'", "wake: frothed a blankness in the passage of what", "wake: we waited &nbsp&nbsp(and silence)"]
   }
   ]
@@ -181,10 +181,10 @@ $(document).ready(function(){
     $('#citations').removeClass('disable');
     for(var i = 0; i < poems.length; i++) {
       $('.poets').append("<ul></ul>");
-      $('.poets').children('ul').eq(i).append("<li>"+poems[i].poet+"</li>");
-      $('.poets').children('ul').eq(i).append("<li>"+poems[i].poem+"</li>");
-      $('.poets').children('ul').eq(i).append("<li><em>"+poems[i].book+"</li></em>");
-      $('.poets').children('ul').eq(i).append("<li>"+poems[i].publisher+"</li>");
+      $('.poets').children('ul').eq(i).append("<div><li>"+poems[i].poet+"</li></div>");
+      $('.poets').children('ul').eq(i).append('<div><li>"'+poems[i].poem+'"</li></div>');
+      $('.poets').children('ul').eq(i).append("<div><li><em>"+poems[i].book+"</em></li></div>");
+      $('.poets').children('ul').eq(i).append("<div><li>"+poems[i].publisher+"</li></div>");
     }
     $(".poets > ul").addClass('col-xs-6');
   }
