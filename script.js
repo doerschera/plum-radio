@@ -6,7 +6,7 @@ $(document).ready(function(){
     poem: "His Passion is Doves",
     book: "Ladies & Gentlemen",
     publisher: "Saturnalia Books, 2011",
-    lines: ["Bewildered, our pigeons flew ashore long ago", "The mull the rooms of old, coastal motels"]
+    lines: ["Bewildered, our pigeons flew ashore long ago", "They mull the rooms of old, coastal motels"]
    },
    {
     poet: "C.D. Wright",
@@ -74,6 +74,10 @@ $(document).ready(function(){
     citations();
   })
 
+  $('#again').click(function() {
+    timedRestart();
+  })
+
 
   function start() {
     $('.start').addClass('disable');
@@ -91,7 +95,7 @@ $(document).ready(function(){
       gutMode();
     })
     $('#five').click(function() {
-      poemCount = 5;
+      poemCount = 1;
       start();
       gutMode();
     })
@@ -133,7 +137,6 @@ $(document).ready(function(){
     $('#timer').removeClass('disable');
     $('#next, #citations').addClass('disable');
     counter = 60;
-    poemCount = 5;
     timer();
     getPoem();
     populateLines();
@@ -201,8 +204,17 @@ $(document).ready(function(){
       $('#lines').append("<h2>Here's what you've written:</h2>");
       $('.form-group, #pastTab, #next, #timer').addClass('disable');
       $('#pastLines, #again').removeClass('disable');
-      poemCount = 5;
     }
+  }
+
+  function timedRestart() {
+    poemCount = 5;
+    counter = 60;
+    $('#lines').empty();
+    $('.form-group, #pastTab, #timer').removeClass('disable');
+    $('#pastLines, #again').addClass('disable');
+    getPoem();
+    populateLines();
   }
 
 })
