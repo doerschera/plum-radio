@@ -172,4 +172,15 @@ $(document).ready(function(){
     $('textarea').val("");
   }
 
+  function citations() {
+    for(var i = 0; i < poems.length; i++) {
+      var list = $('.poets').append("<ul></ul>");
+      $(list).addClass("col-xs-6");
+      $(list).append(poems.poet);
+      $(list).append(poems.poem);
+      $(list).append("<em>"+poems.book+"</em>");
+      $(list).append(poems.publisher);
+    }
+  }
+
 })
