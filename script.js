@@ -239,26 +239,28 @@ $(document).ready(function(){
     populateLines();
     addUserText();
     if(timedMode == true) {
-      counter = 60;
       poemCount --;
       console.log(poemCount);
       timedModeEnd();
+      counter = 60;
+      timer = setInterval(timeCount, 1000);
     }
   }
 
   function pastLines() {
     $('#pastTab, .form-group').addClass('disable');
     $('#inputTab, #pastLines').removeClass('disable');
-    if(timedMode = true) {
+    if(timedMode == true) {
       console.log('here');
       clearInterval(timer);
+      timer = undefined;
     }
   }
+
   function pastLinesBack() {
     $('#pastTab, .form-group').removeClass('disable');
     $('#inputTab, #pastLines').addClass('disable');
     counter = $('#timer').html();
-    clearInterval(timer);
     timer = setInterval(timeCount, 1000);
   }
 
