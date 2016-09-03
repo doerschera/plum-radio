@@ -28,6 +28,83 @@ $(document).ready(function(){
     book: "Subject",
     publisher: "U. of California Press, 2005",
     lines: ["wake: outside the frame beyond his 'fit'", "wake: frothed a blankness in the passage of what", "wake: we waited &nbsp&nbsp(and silence)"]
+  },
+  {
+    poet: "Richard Siken",
+    poem: "Straw House, Straw Dog",
+    book: "Crush",
+    publisher: "Yale University, 2005",
+    lines: ["But thanks, thanks for calling it &nbsp&nbsp&nbsp <em> the blue sky</em>"]
+  },
+  {
+    poet: "Jim Carroll",
+    poem: "To a Poetess",
+    book: "Fear of Dreaming",
+    publisher: "Penguin Books, 1993",
+    lines: ["six doezen wet umbrellas", "the space between them"]
+  },
+  {
+    poet: "Noelle Kocot",
+    poem: "The Nowhere Parade",
+    book: "Poem for the End of Time and Other Poems",
+    publisher: "Wave Books, 2006",
+    lines: ["Slender quietness, transubstantiating octave,", "What happened to your velocity", "On this rainy zero?"]
+  },
+  {
+    poet: "Julie Choffel",
+    poem: "Synopsis",
+    book: "The Hello Delay",
+    publisher: "Fordham U. Press, 2012",
+    lines: ["Please dial slowly", 'I would like to speak in "hierarchies of thought"']
+  },
+  {
+    poet: "Coral Bracho, Trans. Forest Gander",
+    poem: "VI",
+    book: "Firefly Under the Tongue",
+    publisher: "New Directions, 2008",
+    lines: ["A cool brilliance among the chrysanthemums. A word,", "a texture."]
+  },
+  {
+    poet: "James Poteat",
+    peom: "the &nbsp&nbsp&nbsp interference",
+    book: "Illustrating the Machine that Makes the World",
+    publisher: "U. of Georgia Press, 2009",
+    lines: ["&nbsp&nbsp think of", "&nbsp&nbsp&nbsp briars", "riding &nbsp&nbsp&nbsp the skin"]
+  }
+  {
+    poet: "Lauren Ireland",
+    poem: "I Should Have Killed You in that Field",
+    book: "The Arrow",
+    publisher: "Coconut Books, 2014",
+    lines: ["Narcissus or burning plastic. &nbsp&nbsp&nbsp Wrong Day.", "Wrong light.&nbsp&nbsp&nbsp Winter scabs the grass.", "
+    Tight grosgrain path&nbsp&nbsp&nbsp around & around"]
+  },
+  {
+    poet: "Piero Heliczer",
+    poem: "X Buxtehude",
+    book: "A Purchase in the White Botanica",
+    publisher: "Granary Books, 2001",
+    lines: ["supple submarines aromatise feeling", "a quality of the fingers"]
+  }
+  {
+    poet: "Aly Doerscher",
+    poem: "Pieceword",
+    book: "If Not, Winter",
+    publisher: "personal chapbook",
+    lines: ["this is the simple locking mechanism:", "how to trigger dahlias on your hips"]
+  },
+  {
+    poet: "Anne Carson",
+    poem: "n/a",
+    book: "Nox",
+    publisher: "New Directions Books, 2010",
+    lines: ["<em>I fall, you fall, I have fallen, fell, a neutral verb, whence casual and casually</em>"]
+  }, {
+    poet: "Diane Wakoski",
+    poem: "Sixteen of Cups",
+    book: "Inside the Blood Factory",
+    publisher: "Doubleday & Company, 1968",
+    lines: ["So what are you hanging around for?", "You want me to give you an orange?", "You know that bird's going to be in it."]
   }
   ]
 
@@ -78,7 +155,7 @@ $(document).ready(function(){
     aboutClick();
   })
 
-
+  // functions
   function start() {
     $('.start').addClass('disable');
     $('.main').removeClass('disable');
