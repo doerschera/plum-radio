@@ -70,14 +70,13 @@ $(document).ready(function(){
     book: "Illustrating the Machine that Makes the World",
     publisher: "U. of Georgia Press, 2009",
     lines: ["&nbsp&nbsp think of", "&nbsp&nbsp&nbsp briars", "riding &nbsp&nbsp&nbsp the skin"]
-  }
+  },
   {
     poet: "Lauren Ireland",
     poem: "I Should Have Killed You in that Field",
     book: "The Arrow",
     publisher: "Coconut Books, 2014",
-    lines: ["Narcissus or burning plastic. &nbsp&nbsp&nbsp Wrong Day.", "Wrong light.&nbsp&nbsp&nbsp Winter scabs the grass.", "
-    Tight grosgrain path&nbsp&nbsp&nbsp around & around"]
+    lines: ["Narcissus or burning plastic. &nbsp&nbsp&nbsp Wrong Day.", "Wrong light.&nbsp&nbsp&nbsp Winter scabs the grass.", "Tight grosgrain path&nbsp&nbsp&nbsp around & around"]
   },
   {
     poet: "Piero Heliczer",
@@ -85,7 +84,7 @@ $(document).ready(function(){
     book: "A Purchase in the White Botanica",
     publisher: "Granary Books, 2001",
     lines: ["supple submarines aromatise feeling", "a quality of the fingers"]
-  }
+  },
   {
     poet: "Aly Doerscher",
     poem: "Pieceword",
