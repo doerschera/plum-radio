@@ -107,7 +107,7 @@ $(document).ready(function(){
   }
   ]
 
-  var counter;
+  var counter = 60;
   var lines;
   var timedMode = false;
   var usedPoems = [];
@@ -165,7 +165,7 @@ $(document).ready(function(){
   function gutStart() {
     $('#minutes').removeClass('disable');
     $('#zenModeStart').addClass('disable');
-    counter = 60;
+    timer();
     $('#ten').click(function() {
       poemCount = 10;
       start();
@@ -197,16 +197,16 @@ $(document).ready(function(){
     }
   }
 
+  function timer() {
     timerStart = true;
-    timer = setInterval(timeCount, 1000);
-
-  function timeCount() {
-    if(counter == 0) {
-      nextPoem();
-      clearInterval(timer);
-    } else {
-      $('#timer').html(counter--);
-    }
+    timerCounter = setInterval(function(){
+      if(counter == 0) {
+        nextPoem();
+        clearInterval(timer);
+      } else {
+        $('#timer').html(counter--);
+      }
+    }, 1000)
   }
 
   function gutMode() {
@@ -218,7 +218,7 @@ $(document).ready(function(){
     getPoem();
     populateLines();
     if(timerStart === false) {
-      counter = 60;
+      timer();
     }
   }
 
@@ -227,7 +227,7 @@ $(document).ready(function(){
     $('#lines').empty();
     $('#timer, #citations, .start').addClass('disable');
     $('#next, .main').removeClass('disable');
-    clearInterval(timer);
+    clearInterval(timeCounter);
     counter = null;
     getPoem();
     populateLines();
@@ -239,29 +239,24 @@ $(document).ready(function(){
     populateLines();
     addUserText();
     if(timedMode == true) {
+      counter = 60;
       poemCount --;
       console.log(poemCount);
       timedModeEnd();
-      counter = 60;
-      timer = setInterval(timeCount, 1000);
     }
   }
 
   function pastLines() {
     $('#pastTab, .form-group').addClass('disable');
     $('#inputTab, #pastLines').removeClass('disable');
-    if(timedMode == true) {
+    if(timedMode = true) {
       console.log('here');
-      clearInterval(timer);
-      timer = undefined;
+        clearInterval(timeCounter);
     }
   }
-
   function pastLinesBack() {
     $('#pastTab, .form-group').removeClass('disable');
     $('#inputTab, #pastLines').addClass('disable');
-    counter = $('#timer').html();
-    timer = setInterval(timeCount, 1000);
   }
 
   function addUserText() {
@@ -272,7 +267,7 @@ $(document).ready(function(){
   }
 
   function citations() {
-    clearInterval(timer);
+    clearInterval(timeCounter);
     $('.main, .start, #timer').addClass('disable');
     $('#citations').removeClass('disable');
     for(var i = 0; i < poems.length; i++) {
@@ -287,7 +282,7 @@ $(document).ready(function(){
 
   function timedModeEnd() {
     if(poemCount === 0) {
-      clearInterval(timer);
+      clearInterval(timeCounter);
       $('#lines').empty();
       $('#lines').append("<h2>Here's what you've written:</h2>");
       $('.form-group, #pastTab, #next, #timer').addClass('disable');
@@ -308,11 +303,10 @@ $(document).ready(function(){
   function aboutClick() {
     $('.main, #citations, #timer, #minutes').addClass('disable');
     $('.start').removeClass('disable');
-    clearInterval(timer);
+    clearInterval(timerCounter);
     poemCount = 0;
     timedRestart = false;
     timedMode = false;
-    counter = null;
   }
 
 })

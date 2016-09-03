@@ -78,6 +78,10 @@ a:hover {
 	color: #330033;
 }
 
+a:visited {
+  color: #330033;
+}
+
 
 #headerLinks li:nth-Child(2) {
 	margin: 0 10px;
