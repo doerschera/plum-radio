@@ -218,6 +218,7 @@ $(document).ready(function(){
     counter = 60;
     getPoem();
     populateLines();
+    timer();
     if(timerStart === false) {
       timer();
     }
