@@ -58,7 +58,7 @@ $(document).ready(function(){
     lines: ["Please dial slowly", 'I would like to speak in "hierarchies of thought"']
   },
   {
-    poet: "Coral Bracho, Trans. Forest Gander",
+    poet: "Coral Bracho",
     poem: "VI",
     book: "Firefly Under the Tongue",
     publisher: "New Directions, 2008",
@@ -299,6 +299,8 @@ $(document).ready(function(){
       $('.poets').children('ul').eq(i).append("<div><li>"+poems[i].publisher+"</li></div>");
     }
     $(".poets > ul").addClass('col-xs-6');
+    $('ul:contains("Noelle Kocot")').css('margin-bottom', '0px');
+    $('ul:contains("Lauren Ireland")').css('margin-bottom', '0px');
   }
 
   function timedModeEnd() {

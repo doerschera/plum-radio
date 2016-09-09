@@ -228,12 +228,14 @@ textarea {
 }
 
 .poets ul {
-  margin-bottom: 40px;
+  margin-bottom: 30px;
 }
 
 .poets li {
   background-color: #ffffff;
   padding: 0 5px;
+  font-size: 12px;
+  line-height: 18px;
 }
 
 footer {
