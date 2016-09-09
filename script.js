@@ -165,7 +165,6 @@ $(document).ready(function(){
   function gutStart() {
     $('#minutes').removeClass('disable');
     $('#zenModeStart').addClass('disable');
-    timer();
     $('#ten').click(function() {
       poemCount = 10;
       start();
@@ -214,7 +213,8 @@ $(document).ready(function(){
     timedMode = true;
     $('#lines').empty();
     $('#timer, .main').removeClass('disable');
-    $('#next, #citations').addClass('disable');
+    $('#next, #citations, .start, #again').addClass('disable');
+    poemCount = 5;
     counter = 60;
     getPoem();
     populateLines();
@@ -227,10 +227,10 @@ $(document).ready(function(){
   function zenMode() {
     timedMode = false;
     $('#lines').empty();
-    $('#timer, #citations, .start').addClass('disable');
+    $('#timer, #citations, .start, #again').addClass('disable');
     $('#next, .main').removeClass('disable');
-    clearInterval(timeCounter);
     counter = null;
+    clearInterval(timeCounter);
     getPoem();
     populateLines();
   }
@@ -336,7 +336,7 @@ $(document).ready(function(){
   }
 
   function aboutClick() {
-    $('.main, #citations, #timer, #minutes').addClass('disable');
+    $('.main, #citations, #timer, #minutes, #again').addClass('disable');
     $('.start').removeClass('disable');
     clearInterval(timeCounter);
     poemCount = 0;
