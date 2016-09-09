@@ -190,7 +190,7 @@ textarea {
   background-color: #330033;
   text-align: center;
   position: relative;
-  left: 16.66%;
+  /*left: 16.66%;*/
 }
 
 .tab a {
@@ -208,8 +208,12 @@ textarea {
   margin-bottom: 15px;
 }
 
+.buttons {
+  text-align: left;
+}
+
 #next {
-  margin-left: 20px;
+  width: 100%;
 }
 
 #pastLines p {
@@ -241,6 +245,8 @@ textarea {
 footer {
   margin-top: 50px;
   width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 .copy {

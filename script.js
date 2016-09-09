@@ -214,13 +214,12 @@ $(document).ready(function(){
     $('#lines').empty();
     $('#timer, .main').removeClass('disable');
     $('#next, #citations, .start, #again').addClass('disable');
-    poemCount = 5;
     counter = 60;
     getPoem();
     populateLines();
     timer();
-    if(timerStart === false) {
-      timer();
+    if(poemCount == 0) {
+      poemCount = 5;
     }
   }
 
@@ -243,9 +242,7 @@ $(document).ready(function(){
     if(timedMode == true) {
       poemCount --;
       console.log(poemCount);
-      timedModeEnd();
       clearInterval(timeCounter);
-      counter = 60;
       timeCounter = setInterval(function(){
         if(counter == 0) {
           nextPoem();
@@ -255,6 +252,7 @@ $(document).ready(function(){
           $('#timer').html(counter--);
         }
       }, 1000)
+      timedModeEnd();
     }
   }
 
@@ -306,13 +304,11 @@ $(document).ready(function(){
 
   function timedModeEnd() {
     if(poemCount === 0) {
-      console.log('here');
       clearInterval(timeCounter);
       $('#lines').empty();
       $('#lines').append("<h2>Here's what you've written:</h2>");
       $('.form-group, #pastTab, #next, #timer').addClass('disable');
       $('#pastLines, #again').removeClass('disable');
-      return false;
     }
   }
 
