@@ -172,7 +172,7 @@ $(document).ready(function(){
       gutMode();
     })
     $('#five').click(function() {
-      poemCount = 5;
+      poemCount = 1;
       start();
       gutMode();
     })
@@ -199,10 +199,11 @@ $(document).ready(function(){
 
   function timer() {
     timerStart = true;
-    timerCounter = setInterval(function(){
+    timeCounter = setInterval(function(){
       if(counter == 0) {
         nextPoem();
-        clearInterval(timer);
+        // clearInterval(timeCounter);
+        // counter = 60;
       } else {
         $('#timer').html(counter--);
       }
@@ -239,10 +240,20 @@ $(document).ready(function(){
     populateLines();
     addUserText();
     if(timedMode == true) {
-      counter = 60;
       poemCount --;
       console.log(poemCount);
       timedModeEnd();
+      clearInterval(timeCounter);
+      counter = 60;
+      timeCounter = setInterval(function(){
+        if(counter == 0) {
+          nextPoem();
+          clearInterval(timeCounter);
+          timer();
+        } else {
+          $('#timer').html(counter--);
+        }
+      }, 1000)
     }
   }
 
@@ -251,12 +262,22 @@ $(document).ready(function(){
     $('#inputTab, #pastLines').removeClass('disable');
     if(timedMode = true) {
       console.log('here');
-        clearInterval(timeCounter);
+      clearInterval(timeCounter);
     }
   }
+
   function pastLinesBack() {
     $('#pastTab, .form-group').removeClass('disable');
     $('#inputTab, #pastLines').addClass('disable');
+    counter = $('#timer').html();
+    timeCounter = setInterval(function(){
+      if(counter == 0) {
+        nextPoem();
+        clearInterval(timeCounter);
+      } else {
+        $('#timer').html(counter--);
+      }
+    }, 1000)
   }
 
   function addUserText() {
@@ -282,17 +303,28 @@ $(document).ready(function(){
 
   function timedModeEnd() {
     if(poemCount === 0) {
+      console.log('here');
       clearInterval(timeCounter);
       $('#lines').empty();
       $('#lines').append("<h2>Here's what you've written:</h2>");
       $('.form-group, #pastTab, #next, #timer').addClass('disable');
       $('#pastLines, #again').removeClass('disable');
+      return false;
     }
   }
 
   function timedRestart() {
+    clearInterval(timeCounter);
+    timedMode = true;
     poemCount = 5;
     counter = 60;
+    timeCounter = setInterval(function(){
+      if(counter == 0) {
+        nextPoem();
+      } else {
+        $('#timer').html(counter--);
+      }
+    }, 1000)
     $('#lines').empty();
     $('.form-group, #pastTab, #timer').removeClass('disable');
     $('#pastLines, #again').addClass('disable');
@@ -303,7 +335,7 @@ $(document).ready(function(){
   function aboutClick() {
     $('.main, #citations, #timer, #minutes').addClass('disable');
     $('.start').removeClass('disable');
-    clearInterval(timerCounter);
+    clearInterval(timeCounter);
     poemCount = 0;
     timedRestart = false;
     timedMode = false;
