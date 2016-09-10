@@ -253,3 +253,21 @@ footer {
   color: #ffffff;
   float: right;
 }
+
+/* Media Queries*/
+@media (max-width: 767px) {
+  .poets ul {
+    margin-bottom: 30px !important;
+  }
+
+  #headerLinks a {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 659px) {
+  h1 {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+}

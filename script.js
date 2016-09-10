@@ -66,7 +66,7 @@ $(document).ready(function(){
   },
   {
     poet: "James Poteat",
-    peom: "the &nbsp&nbsp&nbsp interference",
+    poem: "the &nbsp&nbsp&nbsp interference",
     book: "Illustrating the Machine that Makes the World",
     publisher: "U. of Georgia Press, 2009",
     lines: ["&nbsp&nbsp think of", "&nbsp&nbsp&nbsp briars", "riding &nbsp&nbsp&nbsp the skin"]
@@ -214,22 +214,23 @@ $(document).ready(function(){
     $('#lines').empty();
     $('#timer, .main').removeClass('disable');
     $('#next, #citations, .start, #again').addClass('disable');
+    poemCount = 5;
     counter = 60;
     getPoem();
     populateLines();
     timer();
-    if(poemCount == 0) {
-      poemCount = 5;
+    if(timerStart === false) {
+      timer();
     }
   }
 
   function zenMode() {
     timedMode = false;
     $('#lines').empty();
-    $('#timer, #citations, .start, #again').addClass('disable');
+    $('#timer, #citations, .start').addClass('disable');
     $('#next, .main').removeClass('disable');
-    counter = null;
     clearInterval(timeCounter);
+    counter = null;
     getPoem();
     populateLines();
   }
@@ -242,7 +243,9 @@ $(document).ready(function(){
     if(timedMode == true) {
       poemCount --;
       console.log(poemCount);
+      timedModeEnd();
       clearInterval(timeCounter);
+      counter = 60;
       timeCounter = setInterval(function(){
         if(counter == 0) {
           nextPoem();
@@ -252,7 +255,6 @@ $(document).ready(function(){
           $('#timer').html(counter--);
         }
       }, 1000)
-      timedModeEnd();
     }
   }
 
@@ -297,18 +299,20 @@ $(document).ready(function(){
       $('.poets').children('ul').eq(i).append("<div><li><em>"+poems[i].book+"</em></li></div>");
       $('.poets').children('ul').eq(i).append("<div><li>"+poems[i].publisher+"</li></div>");
     }
-    $(".poets > ul").addClass('col-xs-6');
+    $(".poets > ul").addClass('col-xs-12 col-sm-6');
     $('ul:contains("Noelle Kocot")').css('margin-bottom', '0px');
     $('ul:contains("Lauren Ireland")').css('margin-bottom', '0px');
   }
 
   function timedModeEnd() {
     if(poemCount === 0) {
+      console.log('here');
       clearInterval(timeCounter);
       $('#lines').empty();
       $('#lines').append("<h2>Here's what you've written:</h2>");
       $('.form-group, #pastTab, #next, #timer').addClass('disable');
       $('#pastLines, #again').removeClass('disable');
+      return false;
     }
   }
 
@@ -332,7 +336,7 @@ $(document).ready(function(){
   }
 
   function aboutClick() {
-    $('.main, #citations, #timer, #minutes, #again').addClass('disable');
+    $('.main, #citations, #timer, #minutes').addClass('disable');
     $('.start').removeClass('disable');
     clearInterval(timeCounter);
     poemCount = 0;
