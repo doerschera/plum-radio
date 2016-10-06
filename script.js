@@ -87,7 +87,7 @@ $(document).ready(function(){
   },
   {
     poet: "Aly Doerscher",
-    poem: "Pieceword",
+    poem: "Piecework",
     book: "If Not, Winter",
     publisher: "personal chapbook",
     lines: ["this is the simple locking mechanism:", "how to trigger dahlias on your hips"]
